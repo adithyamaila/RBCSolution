@@ -1,0 +1,5 @@
+<div *ngFor="let user of users" style="padding: 5px;">
+    <button style="background-color:cadetblue" (click)="changeCurrentUser($event, user)">{{user.name}}</button>
+</div>
+
+<app-user (valueEntered)="validateNewUser($event)" [user]="currentUser"></app-user>

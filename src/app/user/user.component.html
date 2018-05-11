@@ -1,0 +1,21 @@
+<form [formGroup]="userForm" *ngIf="userForm">
+  <div style="padding: 5px;">
+    <label for="name">Name</label>
+    <input formControlName="name" type="text" id="name" required>
+  </div>
+
+  <div style="padding: 5px;">
+    <label for="email">E-mail</label>
+    <input formControlName="email" type="email" id="email">
+  </div>
+  <div style="padding: 5px;">
+    <label for="name">City</label>
+    <input type="text" formControlName="city" id="city" class="form-control">
+    
+  </div>
+  <div *ngIf="city.invalid" style="padding: 5px;">
+    <div *ngIf = "city.errors.required">City Name is required</div> 
+  </div>
+  
+  <button [disabled]="!userForm.valid" (click)="validate()">Save</button>
+</form>
